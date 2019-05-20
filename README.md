@@ -28,9 +28,9 @@ make
 cd ..
 ```
 
-* Move **xalloc.h** and **xalloc.a** to your project directory
-* Add `#include "xalloc.h"` to your source files
-* Link **xalloc.a** file during compilation e.g. `gcc main.c -L. -lxalloc`
+* Move **xalloc** to your project directory
+* Add `#include "xalloc/xalloc.h"` to your source files
+* Link **xalloc.a** file during compilation e.g. `gcc main.c -Lxalloc -lxalloc`
 
 ## Documentation
 
