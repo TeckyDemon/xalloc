@@ -24,9 +24,7 @@ Install **make** and **mingw**.
 
 ```
 git clone "https://github.com/DeBos99/xalloc.git"
-cd xalloc
-make
-cd ..
+make -C xalloc
 ```
 
 * Move **xalloc** to your project directory
