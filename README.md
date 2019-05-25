@@ -1,5 +1,7 @@
 # Xalloc
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 **Xalloc** is cross-platform C library that adds error handling to malloc, calloc, realloc and fopen functions.
 
 ## Content
