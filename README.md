@@ -24,27 +24,71 @@
 ## Content
 
 - [Content](#content)
-- [Prerequisites](#prerequisites)
-  - [Windows](#windows)
 - [Installation](#installation)
+  - [Windows](#windows)
+  - [Unix](#unix)
+    - [Debian/Ubuntu](#apt)
+    - [Arch Linux/Manjaro](#pacman)
+    - [CentOS](#yum)
+    - [MacOS](#homebrew)
+- [Usage](#usage)
 - [Documentation](#documentation)
   - [Methods](#methods)
 - [Authors](#authors)
 - [Contact](#contact)
 - [License](#license)
 
-## Prerequisites
+## Installation
 
 ### Windows
 
-Install **make** and **mingw**.
-
-## Installation
-
+* Install [Make](http://gnuwin32.sourceforge.net/packages/make.htm).
+* Install [MinGW](https://sourceforge.net/projects/mingw-w64/files/latest/download).
+* Run following command in the terminal:
 ```
 git clone "https://github.com/DeBos99/xalloc.git"
 make -C xalloc
 ```
+
+### Unix
+
+#### <a name="APT">Debian/Ubuntu based
+
+* Run following commands in the terminal:
+```
+sudo apt install git gcc -y
+git clone "https://github.com/DeBos99/xalloc.git"
+make -C xalloc
+```
+
+#### <a name="Pacman">Arch Linux/Manjaro
+
+* Run following commands in the terminal:
+```
+sudo pacman -S git gcc --noconfirm
+git clone "https://github.com/DeBos99/xalloc.git"
+make -C xalloc
+```
+
+#### <a name="YUM">CentOS
+
+* Run following commands in the terminal:
+```
+sudo yum install git gcc -y
+git clone "https://github.com/DeBos99/xalloc.git"
+make -C xalloc
+```
+
+#### <a name="Homebrew">MacOS
+
+* Run following commands in the terminal:
+```
+brew install git gcc
+git clone "https://github.com/DeBos99/xalloc.git"
+make -C xalloc
+```
+
+## Usage
 
 * Move **xalloc** to your project directory
 * Add `#include "xalloc/xalloc.h"` to your source files
@@ -54,20 +98,20 @@ make -C xalloc
 
 ### Methods
 
-| Method                                                      | Description                                                                                                                               |
-| :---                                                        | :---                                                                                                                                       |
-| void* malloc(size_t size)                                   | Allocates **size** bytes in memory, checks for allocation erros and returns pointer to allocated memory.                                |
-| void* \_\_wrap_malloc(size_t size)                          | Synonymous with **malloc(size)**.                                                                                                         |
-| void* \_\_old_malloc(size_t size)                           | Allocates **size** bytes in memory and returns pointer to allocated memory.                                                             |
+| Method                                                      | Description                                                                                                                                |
+| :---------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
+| void* malloc(size_t size)                                   | Allocates **size** bytes in memory, checks for allocation erros and returns pointer to allocated memory.                                   |
+| void* \_\_wrap_malloc(size_t size)                          | Synonymous with **malloc(size)**.                                                                                                          |
+| void* \_\_old_malloc(size_t size)                           | Allocates **size** bytes in memory and returns pointer to allocated memory.                                                                |
 | void* calloc(size_t nitems,size_t size)                     | Allocates **size** bytes in memory and initializes them with zeroes, checks for allocation errors and returns pointer to allocated memory. |
 | void* \_\_wrap_calloc(size_t nitems,size_t size)            | Synonymous with **calloc(nitems,size)**.                                                                                                   |
 | void* \_\_old_calloc(size_t nitems,size_t size)             | Allocates **size** bytes in memory and initializes them with zeroes and returns pointer to allocated memory.                               |
-| void* realloc(void* ptr,size_t size)                        | Resizes memory at **ptr** to **size** bytes, checks for allocation errors and returns pointer to reallocated memory.                  |
+| void* realloc(void* ptr,size_t size)                        | Resizes memory at **ptr** to **size** bytes, checks for allocation errors and returns pointer to reallocated memory.                       |
 | void* \_\_wrap_realloc(void* ptr,size_t size)               | Synonymous with **realloc(ptr,size)**.                                                                                                     |
-| void* \_\_old_realloc(void* ptr,size_t size)                | Resizes memory at **ptr** to **size** bytes and returns pointer to reallocated memory.                                                |
-| FILE* fopen(const char* filename,const char* mode)          | Opens the **filename** file with **mode** mode and checks for errors.                                                                   |
-| FILE* \_\_wrap_fopen(const char* filename,const char* mode) | Synonymous with **fopen(filename,mode)**.                                                                                                 |
-| FILE* \_\_old_fopen(const char* filename,const char* mode)  | Opens the **filename** file with **mode** mode.                                                                                           |
+| void* \_\_old_realloc(void* ptr,size_t size)                | Resizes memory at **ptr** to **size** bytes and returns pointer to reallocated memory.                                                     |
+| FILE* fopen(const char* filename,const char* mode)          | Opens the **filename** file with **mode** mode and checks for errors.                                                                      |
+| FILE* \_\_wrap_fopen(const char* filename,const char* mode) | Synonymous with **fopen(filename,mode)**.                                                                                                  |
+| FILE* \_\_old_fopen(const char* filename,const char* mode)  | Opens the **filename** file with **mode** mode.                                                                                            |
 
 ## Authors
 
