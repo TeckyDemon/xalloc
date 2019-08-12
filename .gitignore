@@ -1,7 +1,1 @@
-*
-!.gitignore
-!LICENSE
-!makefile
-!README.md
-!xalloc.c
-!xalloc.h
+*.a
